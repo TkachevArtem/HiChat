@@ -35,9 +35,9 @@ extension AuthViewController {
         
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         
-        let googleView = ButtonFromView(label: googleLabel, button: googleButton)
-        let emailView = ButtonFromView(label: emailLabel, button: emailButton)
-        let loginView = ButtonFromView(label: alreadyOnboardLabel, button: loginButton)
+        let googleView = ButtonFormView(label: googleLabel, button: googleButton)
+        let emailView = ButtonFormView(label: emailLabel, button: emailButton)
+        let loginView = ButtonFormView(label: alreadyOnboardLabel, button: loginButton)
         let stackView = UIStackView(arrangedSubviews: [googleView, emailView, loginView], axis: .vertical, spaing: 40)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false

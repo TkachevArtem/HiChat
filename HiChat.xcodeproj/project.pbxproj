@@ -20,7 +20,8 @@
 		AC96640F2B4C715B00162585 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96640E2B4C715B00162585 /* AuthViewController.swift */; };
 		AC9664142B4C715D00162585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9664132B4C715D00162585 /* Assets.xcassets */; };
 		AC9664172B4C715D00162585 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC9664152B4C715D00162585 /* LaunchScreen.storyboard */; };
-		ACB2AE2A2B519B87006D3D93 /* ButtonFromView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2AE292B519B87006D3D93 /* ButtonFromView.swift */; };
+		ACB2AE2A2B519B87006D3D93 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2AE292B519B87006D3D93 /* ButtonFormView.swift */; };
+		ACF34C7C2B5584E0004612E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF34C7B2B5584E0004612E0 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +40,8 @@
 		AC9664132B4C715D00162585 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC9664162B4C715D00162585 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC9664182B4C715D00162585 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACB2AE292B519B87006D3D93 /* ButtonFromView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFromView.swift; sourceTree = "<group>"; };
+		ACB2AE292B519B87006D3D93 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
+		ACF34C7B2B5584E0004612E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				AC96640C2B4C715B00162585 /* SceneDelegate.swift */,
 				AC96640E2B4C715B00162585 /* AuthViewController.swift */,
 				AC2D67C02B51CFE5005997F2 /* SignUpViewController.swift */,
+				ACF34C7B2B5584E0004612E0 /* LoginViewController.swift */,
 				ACB2AE282B50556B006D3D93 /* Extensions */,
 				AC9664132B4C715D00162585 /* Assets.xcassets */,
 				AC9664152B4C715D00162585 /* LaunchScreen.storyboard */,
@@ -100,7 +103,7 @@
 		ACB2AE282B50556B006D3D93 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				ACB2AE292B519B87006D3D93 /* ButtonFromView.swift */,
+				ACB2AE292B519B87006D3D93 /* ButtonFormView.swift */,
 				AC2D67C22B51D775005997F2 /* OneLineTextField.swift */,
 				ACB2AE272B50555F006D3D93 /* UIKit */,
 			);
@@ -184,10 +187,11 @@
 				AC96640B2B4C715B00162585 /* AppDelegate.swift in Sources */,
 				AC2D67BF2B51A699005997F2 /* UIStackView + Extension.swift in Sources */,
 				AC6E98BE2B4DC98B007DE035 /* UILabel + Extension.swift in Sources */,
-				ACB2AE2A2B519B87006D3D93 /* ButtonFromView.swift in Sources */,
+				ACB2AE2A2B519B87006D3D93 /* ButtonFormView.swift in Sources */,
 				AC6E98C02B4DCBE9007DE035 /* UIImageView + Extension.swift in Sources */,
 				AC6E98BC2B4DC473007DE035 /* UIColor + Extension.swift in Sources */,
 				AC96640D2B4C715B00162585 /* SceneDelegate.swift in Sources */,
+				ACF34C7C2B5584E0004612E0 /* LoginViewController.swift in Sources */,
 				AC6E98B82B4DBEE8007DE035 /* UIButton + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

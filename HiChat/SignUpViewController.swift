@@ -11,7 +11,7 @@ class SignUpViewController: UIViewController {
     
     let welcomeLabel = UILabel(text: "Good to see you!", font: .avenir26())
     let emailLabel = UILabel(text: "Email")
-    let passwordLabel = UILabel(text: "Psaaword")
+    let passwordLabel = UILabel(text: "Password")
     let confirmPasswordLabel = UILabel(text: "Confirm password")
     let alreadyOnboardLabel = UILabel(text: "Already onboard?")
     
@@ -40,9 +40,11 @@ extension SignUpViewController {
         
         signUpButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
-        let stackView = UIStackView(arrangedSubviews: [emailStackView, passwordStackView, conformPasswordStackView], axis: .vertical, spaing: 20)
+        let stackView = UIStackView(arrangedSubviews: [emailStackView, passwordStackView, conformPasswordStackView, signUpButton], axis: .vertical, spaing: 20)
         
-        let bottomStackView = UIStackView(arrangedSubviews: [alreadyOnboardLabel, loginButton], axis: .horizontal, spaing: -1)
+        loginButton.contentHorizontalAlignment = .leading
+        let bottomStackView = UIStackView(arrangedSubviews: [alreadyOnboardLabel, loginButton], axis: .horizontal, spaing: 10)
+        bottomStackView.alignment = .firstBaseline
         
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -64,7 +66,7 @@ extension SignUpViewController {
         ])
         
         NSLayoutConstraint.activate([
-            bottomStackView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 140),
+            bottomStackView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
             bottomStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             bottomStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
