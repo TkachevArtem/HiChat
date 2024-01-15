@@ -9,7 +9,7 @@ import UIKit
 
 class AuthViewController: UIViewController {
     
-    let logoImageView = UIImageView(image: UIImage(named: "hi"))
+    let logoImageView = UIImageView(image: UIImage(named: "hi"), contentMode: .scaleAspectFit)
     
     let googleLabel = UILabel(text: "Get start with")
     let emailLabel = UILabel(text: "Or sing up with")
@@ -23,6 +23,7 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        googleButton.customizeGoogleButton()
         setupConstraints()
     }
 }
