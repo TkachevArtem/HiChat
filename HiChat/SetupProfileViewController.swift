@@ -9,12 +9,16 @@ import UIKit
 
 class SetupProfileViewController: UIViewController {
     
+    let addPhotoImageView = AddPhotoView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemMint
         setupConstraints()
     }
+    
+    //
 }
 
 // MARK: - Setup constraints
@@ -22,7 +26,12 @@ extension SetupProfileViewController {
     
     private func setupConstraints() {
         
-        
+        addPhotoImageView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(addPhotoImageView)
+        NSLayoutConstraint.activate([
+            addPhotoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
+            addPhotoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
     }
 }
 
