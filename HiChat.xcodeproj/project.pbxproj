@@ -17,6 +17,9 @@
 		AC6E98BC2B4DC473007DE035 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E98BB2B4DC473007DE035 /* UIColor + Extension.swift */; };
 		AC6E98BE2B4DC98B007DE035 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E98BD2B4DC98B007DE035 /* UILabel + Extension.swift */; };
 		AC6E98C02B4DCBE9007DE035 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E98BF2B4DCBE9007DE035 /* UIImageView + Extension.swift */; };
+		AC6FDC1C2B5982C800DCC8DA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6FDC1B2B5982C800DCC8DA /* MainTabBarController.swift */; };
+		AC6FDC1E2B59835300DCC8DA /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6FDC1D2B59835300DCC8DA /* ListViewController.swift */; };
+		AC6FDC212B59844200DCC8DA /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6FDC202B59844200DCC8DA /* PeopleViewController.swift */; };
 		AC96640B2B4C715B00162585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96640A2B4C715B00162585 /* AppDelegate.swift */; };
 		AC96640D2B4C715B00162585 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96640C2B4C715B00162585 /* SceneDelegate.swift */; };
 		AC96640F2B4C715B00162585 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96640E2B4C715B00162585 /* AuthViewController.swift */; };
@@ -38,6 +41,9 @@
 		AC6E98BB2B4DC473007DE035 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		AC6E98BD2B4DC98B007DE035 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		AC6E98BF2B4DCBE9007DE035 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
+		AC6FDC1B2B5982C800DCC8DA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		AC6FDC1D2B59835300DCC8DA /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		AC6FDC202B59844200DCC8DA /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		AC9664072B4C715B00162585 /* HiChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC96640A2B4C715B00162585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC96640C2B4C715B00162585 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +67,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC683BDE2B5857160085B138 /* SignIn&AuthVC */ = {
+			isa = PBXGroup;
+			children = (
+				AC96640E2B4C715B00162585 /* AuthViewController.swift */,
+				AC2D67C02B51CFE5005997F2 /* SignUpViewController.swift */,
+				ACF34C7B2B5584E0004612E0 /* LoginViewController.swift */,
+				AC98603C2B55934300E7CABD /* SetupProfileViewController.swift */,
+			);
+			path = "SignIn&AuthVC";
+			sourceTree = "<group>";
+		};
+		AC6FDC1F2B59840000DCC8DA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC6FDC1B2B5982C800DCC8DA /* MainTabBarController.swift */,
+				AC6FDC1D2B59835300DCC8DA /* ListViewController.swift */,
+				AC6FDC202B59844200DCC8DA /* PeopleViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		AC9663FE2B4C715B00162585 = {
 			isa = PBXGroup;
 			children = (
@@ -82,10 +109,8 @@
 			children = (
 				AC96640A2B4C715B00162585 /* AppDelegate.swift */,
 				AC96640C2B4C715B00162585 /* SceneDelegate.swift */,
-				AC96640E2B4C715B00162585 /* AuthViewController.swift */,
-				AC2D67C02B51CFE5005997F2 /* SignUpViewController.swift */,
-				ACF34C7B2B5584E0004612E0 /* LoginViewController.swift */,
-				AC98603C2B55934300E7CABD /* SetupProfileViewController.swift */,
+				AC6FDC1F2B59840000DCC8DA /* Controllers */,
+				AC683BDE2B5857160085B138 /* SignIn&AuthVC */,
 				ACB2AE282B50556B006D3D93 /* Extensions */,
 				AC9664132B4C715D00162585 /* Assets.xcassets */,
 				AC9664152B4C715D00162585 /* LaunchScreen.storyboard */,
@@ -194,6 +219,7 @@
 				AC6E98BA2B4DC32C007DE035 /* UIFont + Extension.swift in Sources */,
 				AC96640F2B4C715B00162585 /* AuthViewController.swift in Sources */,
 				AC98603D2B55934300E7CABD /* SetupProfileViewController.swift in Sources */,
+				AC6FDC212B59844200DCC8DA /* PeopleViewController.swift in Sources */,
 				AC96640B2B4C715B00162585 /* AppDelegate.swift in Sources */,
 				AC2D67BF2B51A699005997F2 /* UIStackView + Extension.swift in Sources */,
 				AC2A80A12B56FF8E00F5C9D8 /* AddPhotoView.swift in Sources */,
@@ -203,8 +229,10 @@
 				AC6E98C02B4DCBE9007DE035 /* UIImageView + Extension.swift in Sources */,
 				AC6E98BC2B4DC473007DE035 /* UIColor + Extension.swift in Sources */,
 				AC96640D2B4C715B00162585 /* SceneDelegate.swift in Sources */,
+				AC6FDC1E2B59835300DCC8DA /* ListViewController.swift in Sources */,
 				ACF34C7C2B5584E0004612E0 /* LoginViewController.swift in Sources */,
 				AC6E98B82B4DBEE8007DE035 /* UIButton + Extension.swift in Sources */,
+				AC6FDC1C2B5982C800DCC8DA /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,8 +26,6 @@ class SetupProfileViewController: UIViewController {
         view.backgroundColor = .systemMint
         setupConstraints()
     }
-    
-    //
 }
 
 // MARK: - Setup constraints
