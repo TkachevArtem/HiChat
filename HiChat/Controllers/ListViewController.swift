@@ -59,8 +59,8 @@ class ListViewController: UIViewController {
         collectionView.backgroundColor = .white
         view.addSubview(collectionView)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellid")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellid2")
+        collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reuseID)
+        collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reuseID)
     }
     
     private func reloadData() {
@@ -74,6 +74,13 @@ class ListViewController: UIViewController {
 
 // MARK: - Data Source
 extension ListViewController {
+    
+    private func configure<T: SelfConfiguringCell> (cellType: T.Type, with value: HChat, fot indexPath: IndexPath) -> T {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseID, for: indexPath) as? T else { fatalError() }
+        cell.configure(with: value)
+        return cell
+    }
+    
     private func createDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, HChat>(collectionView: collectionView, cellProvider: { collectionView, indexPath, chat in
             guard let section = Section(rawValue: indexPath.section) else {
@@ -82,13 +89,9 @@ extension ListViewController {
             
             switch section {
             case .activeChats:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
-                cell.backgroundColor = .systemPink
-                return cell
+                return self.configure(cellType: ActiveChatCell.self, with: chat, fot: indexPath)
             case .waitingChats:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid2", for: indexPath)
-                cell.backgroundColor = .systemGreen
-                return cell
+                return self.configure(cellType: WaitingChatCell.self, with: chat, fot: indexPath)
             }
         })
     }
