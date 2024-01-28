@@ -34,6 +34,7 @@
 		ACC97FA42B65502D0068D370 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC97FA32B65502D0068D370 /* GradientView.swift */; };
 		ACC97FA62B65589E0068D370 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC97FA52B65589E0068D370 /* WaitingChatCell.swift */; };
 		ACC97FA92B655A530068D370 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC97FA82B655A530068D370 /* SelfConfiguringCell.swift */; };
+		ACC97FAB2B65627E0068D370 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC97FAA2B65627E0068D370 /* SectionHeader.swift */; };
 		ACF34C7C2B5584E0004612E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF34C7B2B5584E0004612E0 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		ACC97FA32B65502D0068D370 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		ACC97FA52B65589E0068D370 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		ACC97FA82B655A530068D370 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
+		ACC97FAA2B65627E0068D370 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		ACF34C7B2B5584E0004612E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 				AC6FDC1B2B5982C800DCC8DA /* MainTabBarController.swift */,
 				AC6FDC1D2B59835300DCC8DA /* ListViewController.swift */,
 				AC6FDC202B59844200DCC8DA /* PeopleViewController.swift */,
+				ACC97FAA2B65627E0068D370 /* SectionHeader.swift */,
 				ACC97FA02B651E0C0068D370 /* Cell */,
 			);
 			path = Controllers;
@@ -255,6 +258,7 @@
 			files = (
 				AC2D67C32B51D775005997F2 /* OneLineTextField.swift in Sources */,
 				AC2D67C12B51CFE5005997F2 /* SignUpViewController.swift in Sources */,
+				ACC97FAB2B65627E0068D370 /* SectionHeader.swift in Sources */,
 				ACC97FA42B65502D0068D370 /* GradientView.swift in Sources */,
 				AC6E98BA2B4DC32C007DE035 /* UIFont + Extension.swift in Sources */,
 				AC96640F2B4C715B00162585 /* AuthViewController.swift in Sources */,
