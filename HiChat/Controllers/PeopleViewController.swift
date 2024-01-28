@@ -9,14 +9,30 @@ import UIKit
 
 class PeopleViewController: UIViewController {
     
+    let users = Bundle.main.decode([HUser].self, from: "users.json")
     
+    enum Section: Int, CaseIterable {
+        case users
+        
+        func description(usersCount: Int) -> String {
+            switch self {
+            case .users:
+                return "\(usersCount) users in chat"
+            }
+        }
+    }
+    
+    var collectionView: UICollectionView!
+    var dataSource: UICollectionViewDiffableDataSource<Section, HUser>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemGray
-        
+        view.backgroundColor = .systemBackground
+        setupCollectionView()
         setupSearchBar()
+        createDataSource()
+        reloadData()
     }
     
     private func setupSearchBar() {
@@ -29,11 +45,115 @@ class PeopleViewController: UIViewController {
         searchController.searchBar.delegate = self
     }
     
+    private func setupCollectionView() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.backgroundColor = .white
+        view.addSubview(collectionView)
+        
+        collectionView.register(UserCell.self, forCellWithReuseIdentifier: UserCell.reuseID)
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseID)
+    }
+    
+    private func reloadData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, HUser>()
+        snapshot.appendSections([.users])
+        snapshot.appendItems(users, toSection: .users)
+        dataSource?.apply(snapshot, animatingDifferences: true)
+    }
+}
+
+// MARK: - Data Source
+extension PeopleViewController {
+    private func createDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, HUser>(collectionView: collectionView, cellProvider: { collectionView, indexPath, user in
+            guard let section = Section(rawValue: indexPath.section) else {
+                fatalError("Unknown section kind")
+            }
+            
+            switch section {
+            case .users:
+                return self.configure(collectionView: collectionView, cellType: UserCell.self, with: user, for: indexPath)
+            }
+        })
+        
+        dataSource?.supplementaryViewProvider = {
+            collectionView, kind, indexPath in
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseID, for: indexPath) as? SectionHeader else { fatalError("Can't create new Section Header") }
+            guard let section = Section(rawValue: indexPath.section) else { fatalError() }
+            let items = self.dataSource.snapshot().itemIdentifiers(inSection: .users)
+            sectionHeader.configure(text: section.description(usersCount: items.count), font: .systemFont(ofSize: 20), textColor: .black)
+            return sectionHeader
+        }
+    }
+}
+
+// MARK: - Setup layout
+extension PeopleViewController {
+    private func createCompositionalLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection in
+            
+            guard let section = Section(rawValue: sectionIndex) else {
+                fatalError("Unknonw section kind")
+            }
+            
+            switch section {
+            case .users:
+                return self.createUserSection()
+            }
+        }
+        return layout
+    }
+    
+    private func createUserSection() -> NSCollectionLayoutSection {
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.6))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 2)
+        group.interItemSpacing = .fixed(15)
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 15
+        section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 15, bottom: 0, trailing: 0)
+        
+        let sectionHeader = createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
+        return section
+    }
+    
+    private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(1))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        return sectionHeader
+    }
 }
 
 // MARK: - UISearchBarDelegate
 extension PeopleViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
+    }
+}
+
+// MARK: - SwiftUI Canvas
+import SwiftUI
+
+struct PeopleViewControllerProvider: PreviewProvider {
+    
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        
+        let viewController = MainTabBarController()
+        
+        func makeUIViewController(context: UIViewControllerRepresentableContext<PeopleViewControllerProvider.ContainerView>) -> MainTabBarController {
+            return viewController
+        }
+        
+        func updateUIViewController(_ uiViewController: PeopleViewControllerProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<PeopleViewControllerProvider.ContainerView>) {
+            
+        }
     }
 }

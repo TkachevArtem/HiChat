@@ -8,12 +8,14 @@
 import UIKit
 
 class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
+    
     static var reuseID: String = "WaitingChatCell"
     
     let chatImageView = UIImageView()
     
-    func configure(with value: HChat) {
-        chatImageView.image = UIImage(named: value.userImageString)
+    func configure<U>(with value: U) where U : Hashable {
+        guard let chat: HChat = value as? HChat else { return }
+        chatImageView.image = UIImage(named: chat.userImageString) 
     }
     
     override init(frame: CGRect) {

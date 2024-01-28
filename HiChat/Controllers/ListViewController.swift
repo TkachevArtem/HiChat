@@ -7,21 +7,6 @@
 
 import UIKit
 
-struct HChat: Hashable, Decodable {
-    var userName: String
-    var userImageString: String
-    var lastMessage: String
-    var id: Int
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    static func == (lhs: HChat, rhs: HChat) -> Bool {
-        return lhs.id == rhs.id
-    }
-}
-
 class ListViewController: UIViewController {
     
     let activeChats = Bundle.main.decode([HChat].self, from: "activeChats.json")
@@ -85,12 +70,6 @@ class ListViewController: UIViewController {
 // MARK: - Data Source
 extension ListViewController {
     
-    private func configure<T: SelfConfiguringCell> (cellType: T.Type, with value: HChat, fot indexPath: IndexPath) -> T {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseID, for: indexPath) as? T else { fatalError() }
-        cell.configure(with: value)
-        return cell
-    }
-    
     private func createDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, HChat>(collectionView: collectionView, cellProvider: { collectionView, indexPath, chat in
             guard let section = Section(rawValue: indexPath.section) else {
@@ -99,9 +78,9 @@ extension ListViewController {
             
             switch section {
             case .activeChats:
-                return self.configure(cellType: ActiveChatCell.self, with: chat, fot: indexPath)
+                return self.configure(collectionView: collectionView, cellType: ActiveChatCell.self, with: chat, for: indexPath)
             case .waitingChats:
-                return self.configure(cellType: WaitingChatCell.self, with: chat, fot: indexPath)
+                return self.configure(collectionView: collectionView, cellType: WaitingChatCell.self, with: chat, for: indexPath)
             }
         })
         
