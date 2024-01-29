@@ -26,6 +26,7 @@
 		AC78E7BF2B67FE0400A48FD1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC78E7BE2B67FE0400A48FD1 /* ProfileViewController.swift */; };
 		AC78E7C12B6816D500A48FD1 /* InsertableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC78E7C02B6816D500A48FD1 /* InsertableTextField.swift */; };
 		AC78E7C32B681D1300A48FD1 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC78E7C22B681D1300A48FD1 /* UIView + Extension.swift */; };
+		AC78E7C52B682BCB00A48FD1 /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC78E7C42B682BCB00A48FD1 /* ChatRequestViewController.swift */; };
 		AC96640B2B4C715B00162585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96640A2B4C715B00162585 /* AppDelegate.swift */; };
 		AC96640D2B4C715B00162585 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96640C2B4C715B00162585 /* SceneDelegate.swift */; };
 		AC96640F2B4C715B00162585 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96640E2B4C715B00162585 /* AuthViewController.swift */; };
@@ -66,6 +67,7 @@
 		AC78E7BE2B67FE0400A48FD1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AC78E7C02B6816D500A48FD1 /* InsertableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertableTextField.swift; sourceTree = "<group>"; };
 		AC78E7C22B681D1300A48FD1 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		AC78E7C42B682BCB00A48FD1 /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 		AC9664072B4C715B00162585 /* HiChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC96640A2B4C715B00162585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC96640C2B4C715B00162585 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				AC6FDC1D2B59835300DCC8DA /* ListViewController.swift */,
 				AC6FDC202B59844200DCC8DA /* PeopleViewController.swift */,
 				AC78E7BE2B67FE0400A48FD1 /* ProfileViewController.swift */,
+				AC78E7C42B682BCB00A48FD1 /* ChatRequestViewController.swift */,
 				ACC97FA02B651E0C0068D370 /* Cell */,
 				ACC97FAE2B6696D60068D370 /* Headers */,
 			);
@@ -312,6 +315,7 @@
 				AC77DE872B617273003DC0B4 /* Bundle-Decodable.swift in Sources */,
 				AC78E7BF2B67FE0400A48FD1 /* ProfileViewController.swift in Sources */,
 				AC2D67BF2B51A699005997F2 /* UIStackView + Extension.swift in Sources */,
+				AC78E7C52B682BCB00A48FD1 /* ChatRequestViewController.swift in Sources */,
 				ACC97FB12B6698C60068D370 /* HChat.swift in Sources */,
 				AC2A80A12B56FF8E00F5C9D8 /* AddPhotoView.swift in Sources */,
 				AC6E98BE2B4DC98B007DE035 /* UILabel + Extension.swift in Sources */,
