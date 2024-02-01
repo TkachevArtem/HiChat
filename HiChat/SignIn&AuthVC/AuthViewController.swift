@@ -18,13 +18,30 @@ class AuthViewController: UIViewController {
     let googleButton = UIButton(title: "Google", titleColor: .black, backgroundColor: .white, isShadow: true)
     let emailButton = UIButton(title: "Email", titleColor: .white, backgroundColor: .black)
     let loginButton = UIButton(title: "Login", titleColor: .red, backgroundColor: .white, isShadow: true)
+    
+    let signUpViewController = SignUpViewController()
+    let loginViewCintroller = LoginViewController()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .mainWhite()
         
         googleButton.customizeGoogleButton()
         setupConstraints()
+        
+        emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func emailButtonTapped() {
+        print(#function)
+        present(signUpViewController, animated: true, completion: nil)
+    }
+    
+    @objc private func loginButtonTapped() {
+        print(#function)
+        present(loginViewCintroller, animated: true, completion: nil)
     }
 }
 

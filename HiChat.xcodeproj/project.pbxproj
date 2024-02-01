@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		087B9BE860FE3C4522AAB72D /* Pods_HiChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF6C2707D919DDE94180D09 /* Pods_HiChat.framework */; };
+		AC1DFAF32B6C18B9009A2929 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1DFAF22B6C18B9009A2929 /* AuthService.swift */; };
 		AC2A80A12B56FF8E00F5C9D8 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A80A02B56FF8E00F5C9D8 /* AddPhotoView.swift */; };
 		AC2D67BF2B51A699005997F2 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2D67BE2B51A699005997F2 /* UIStackView + Extension.swift */; };
 		AC2D67C12B51CFE5005997F2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2D67C02B51CFE5005997F2 /* SignUpViewController.swift */; };
@@ -78,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		9A8E35976395BDF42574C3B3 /* Pods-HiChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiChat.release.xcconfig"; path = "Target Support Files/Pods-HiChat/Pods-HiChat.release.xcconfig"; sourceTree = "<group>"; };
+		AC1DFAF22B6C18B9009A2929 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		AC2A80A02B56FF8E00F5C9D8 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		AC2D67BE2B51A699005997F2 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		AC2D67C02B51CFE5005997F2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AC1DFAF12B6C188E009A2929 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ACC97FAF2B6698B00068D370 /* Models */,
+				AC1DFAF22B6C18B9009A2929 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		AC683BDE2B5857160085B138 /* SignIn&AuthVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,7 +229,7 @@
 			children = (
 				AC96640A2B4C715B00162585 /* AppDelegate.swift */,
 				AC96640C2B4C715B00162585 /* SceneDelegate.swift */,
-				ACC97FAF2B6698B00068D370 /* Models */,
+				AC1DFAF12B6C188E009A2929 /* Services */,
 				AC6FDC1F2B59840000DCC8DA /* Controllers */,
 				AC683BDE2B5857160085B138 /* SignIn&AuthVC */,
 				ACC97FA72B655A220068D370 /* Protocols */,
@@ -471,6 +482,7 @@
 				AC6FDC1E2B59835300DCC8DA /* ListViewController.swift in Sources */,
 				ACF34C7C2B5584E0004612E0 /* LoginViewController.swift in Sources */,
 				AC6E98B82B4DBEE8007DE035 /* UIButton + Extension.swift in Sources */,
+				AC1DFAF32B6C18B9009A2929 /* AuthService.swift in Sources */,
 				ACC97FB32B6699100068D370 /* HUser.swift in Sources */,
 				AC6FDC1C2B5982C800DCC8DA /* MainTabBarController.swift in Sources */,
 			);
