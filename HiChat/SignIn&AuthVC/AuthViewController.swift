@@ -20,7 +20,7 @@ class AuthViewController: UIViewController {
     let loginButton = UIButton(title: "Login", titleColor: .red, backgroundColor: .white, isShadow: true)
     
     let signUpViewController = SignUpViewController()
-    let loginViewCintroller = LoginViewController()
+    let loginViewController = LoginViewController()
 
     
     override func viewDidLoad() {
@@ -32,6 +32,9 @@ class AuthViewController: UIViewController {
         
         emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        
+        signUpViewController.delegate = self
+        loginViewController.delegate = self
     }
     
     @objc private func emailButtonTapped() {
@@ -41,7 +44,7 @@ class AuthViewController: UIViewController {
     
     @objc private func loginButtonTapped() {
         print(#function)
-        present(loginViewCintroller, animated: true, completion: nil)
+        present(loginViewController, animated: true, completion: nil)
     }
 }
 
@@ -75,6 +78,18 @@ extension AuthViewController {
         ])
         
     }
+}
+
+extension AuthViewController: AuthNavigationDelegate {
+    func toLoginVC() {
+        present(loginViewController, animated: true, completion: nil)
+    }
+    
+    func toSignUpVC() {
+        present(signUpViewController, animated: true, completion: nil)
+    }
+    
+    
 }
 
 // MARK: - SwiftUI Canvas

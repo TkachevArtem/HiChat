@@ -74,6 +74,8 @@
 		ACC97FB32B6699100068D370 /* HUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC97FB22B6699100068D370 /* HUser.swift */; };
 		ACC97FB52B66B9600068D370 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC97FB42B66B9600068D370 /* UIViewController + Extension.swift */; };
 		ACC97FB72B66BD5F0068D370 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC97FB62B66BD5F0068D370 /* UserCell.swift */; };
+		ACCB52452B8F93F400B6256C /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCB52442B8F93F400B6256C /* Validators.swift */; };
+		ACCB52472B8F97D900B6256C /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCB52462B8F97D900B6256C /* AuthError.swift */; };
 		ACF34C7C2B5584E0004612E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF34C7B2B5584E0004612E0 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +122,8 @@
 		ACC97FB22B6699100068D370 /* HUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUser.swift; sourceTree = "<group>"; };
 		ACC97FB42B66B9600068D370 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		ACC97FB62B66BD5F0068D370 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		ACCB52442B8F93F400B6256C /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		ACCB52462B8F97D900B6256C /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		ACF34C7B2B5584E0004612E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C9244D186D9AFD400077CE5F /* Pods-HiChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiChat.debug.xcconfig"; path = "Target Support Files/Pods-HiChat/Pods-HiChat.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF6C2707D919DDE94180D09 /* Pods_HiChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +238,7 @@
 				AC683BDE2B5857160085B138 /* SignIn&AuthVC */,
 				ACC97FA72B655A220068D370 /* Protocols */,
 				ACB2AE282B50556B006D3D93 /* Extensions */,
+				ACCB52482B8F9CB200B6256C /* Helpers */,
 				AC77DE832B617252003DC0B4 /* activeChats.json */,
 				AC77DE822B617252003DC0B4 /* waitingChats.json */,
 				ACC97FAC2B6679170068D370 /* users.json */,
@@ -308,6 +313,15 @@
 				ACC97FB22B6699100068D370 /* HUser.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		ACCB52482B8F9CB200B6256C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ACCB52442B8F93F400B6256C /* Validators.swift */,
+				ACCB52462B8F97D900B6256C /* AuthError.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D64F2E616AC2ADBD374179E4 /* Pods */ = {
@@ -457,8 +471,10 @@
 				ACC97FA42B65502D0068D370 /* GradientView.swift in Sources */,
 				AC6E98BA2B4DC32C007DE035 /* UIFont + Extension.swift in Sources */,
 				AC96640F2B4C715B00162585 /* AuthViewController.swift in Sources */,
+				ACCB52472B8F97D900B6256C /* AuthError.swift in Sources */,
 				ACC97FA22B651E320068D370 /* ActiveChatCell.swift in Sources */,
 				AC98603D2B55934300E7CABD /* SetupProfileViewController.swift in Sources */,
+				ACCB52452B8F93F400B6256C /* Validators.swift in Sources */,
 				AC6FDC212B59844200DCC8DA /* PeopleViewController.swift in Sources */,
 				AC96640B2B4C715B00162585 /* AppDelegate.swift in Sources */,
 				AC78E7C12B6816D500A48FD1 /* InsertableTextField.swift in Sources */,

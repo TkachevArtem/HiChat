@@ -22,6 +22,8 @@ class SignUpViewController: UIViewController {
     let signUpButton = UIButton(title: "Sign Up", titleColor: .white, backgroundColor: .black)
     let loginButton = UIButton(title: "Login", titleColor: .red, backgroundColor: .white)
     
+    weak var delegate: AuthNavigationDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .mainWhite()
@@ -33,17 +35,22 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func loginButtonTapped() {
-        print(#function)
+        dismiss(animated: true) {
+            self.delegate?.toLoginVC()
+        }
     }
     
     @objc private func signUpButtonTapped() {
         print(#function)
         AuthService.shared.register(email: emailTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text) { (result) in
             switch result {
-            case .success(_):
-                self.showAlert(with: "Successfull", and: "You have been registred")
-            case .failure(_):
-                self.showAlert(with: "Error", and: "Eror")
+            case .success(let user):
+                self.showAlert(with: "Successful", and: "You have been registred") {
+                    self.present(SetupProfileViewController(), animated: true)
+                }
+                print(user.email)
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
             }
         }
     }
@@ -119,9 +126,11 @@ struct SignUpViewControllerProvider: PreviewProvider {
 
 extension UIViewController {
     
-    func showAlert(with title: String, and message: String) {
+    func showAlert(with title: String, and message: String, completion: @escaping () -> Void = {}) {
         let alertControllec = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (_) in
+            completion()
+        }
         alertControllec.addAction(okAction)
         present(alertControllec, animated: true, completion: nil)
     }
