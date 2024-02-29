@@ -5,7 +5,6 @@
 //  Created by Artem Tkachev on 1.02.24.
 //
 
-import SwiftUI
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
