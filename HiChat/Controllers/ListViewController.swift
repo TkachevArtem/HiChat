@@ -160,25 +160,3 @@ extension ListViewController: UISearchBarDelegate {
     }
 }
 
-// MARK: - SwiftUI Canvas
-import SwiftUI
-
-struct ListViewControllerProvider: PreviewProvider {
-    
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let viewController = MainTabBarController()
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<ListViewControllerProvider.ContainerView>) -> MainTabBarController {
-            return viewController
-        }
-        
-        func updateUIViewController(_ uiViewController: ListViewControllerProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ListViewControllerProvider.ContainerView>) {
-            
-        }
-    }
-}

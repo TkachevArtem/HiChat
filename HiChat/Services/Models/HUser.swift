@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 struct HUser: Hashable, Decodable {
     var userName: String
@@ -15,13 +16,39 @@ struct HUser: Hashable, Decodable {
     var sex: String
     var id: String
     
+    init(userName: String, email: String, userAvatarString: String, description: String, sex: String, id: String) {
+        self.userName = userName
+        self.email = email
+        self.id = id
+        self.description = description
+        self.sex = sex
+        self.userAvatarString = userAvatarString
+    }
+    
+    init?(document: DocumentSnapshot) {
+        guard let data = document.data() else { return nil}
+        guard let userName = data["userName"] as? String,
+              let email = data["email"] as? String,
+              let id = data["id"] as? String,
+              let description = data["description"] as? String,
+              let sex = data["sex"] as? String,
+              let userAvatarString = data["userAvatarString"] as? String else { return nil}
+        
+        self.userName = userName
+        self.email = email
+        self.id = id
+        self.description = description
+        self.sex = sex
+        self.userAvatarString = userAvatarString
+    }
+    
     var representation: [String: Any] {
-        var rep = ["userName": userName]
-        rep = ["email": email]
-        rep = ["userAvatarString": userAvatarString]
-        rep = ["description": description]
-        rep = ["sex": sex]
-        rep = ["uid": id]
+        var rep = ["id": id]
+        rep ["userName"] = userName
+        rep ["email"] = email
+        rep ["description"] = description
+        rep ["sex"] = sex
+        rep ["userAvatarString"] = userAvatarString
         return rep
     }
     

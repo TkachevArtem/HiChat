@@ -10,6 +10,8 @@ import Foundation
 enum UserError {
     case notFilled
     case photoNotExit
+    case cannotGetUserInfo
+    case cannotUnwrapToHUser
 
 }
 
@@ -20,6 +22,10 @@ extension UserError: LocalizedError {
             return NSLocalizedString("Please fill in all fields", comment: "")
         case .photoNotExit:
             return NSLocalizedString("User did not choose photo", comment: "")
+        case .cannotGetUserInfo:
+            return NSLocalizedString("Can not get user info", comment: "")
+        case .cannotUnwrapToHUser:
+            return NSLocalizedString("Can not unwrap user data to HUser", comment: "")
         }
     }
 }

@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PeopleViewController: UIViewController {
     
-    let users = Bundle.main.decode([HUser].self, from: "users.json")
+    //let users = Bundle.main.decode([HUser].self, from: "users.json")
     
     enum Section: Int, CaseIterable {
         case users
@@ -22,6 +23,7 @@ class PeopleViewController: UIViewController {
         }
     }
     
+    let users = [HUser]()
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, HUser>!
     
@@ -33,6 +35,18 @@ class PeopleViewController: UIViewController {
         setupSearchBar()
         createDataSource()
         reloadData(with: nil)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logOut))
+    }
+    
+    @objc func logOut() {
+        do {
+            try Auth.auth().signOut()
+            //UIApplication.shared.keyWindow?.rootViewController = AuthViewController()
+            UIApplication.shared.connectedScenes.compactMap { ($0 as? UIWindowScene)?.keyWindow }.last?.rootViewController = AuthViewController()
+        } catch {
+            print("Error \(error.localizedDescription)")
+        }
     }
     
     private func setupSearchBar() {
@@ -135,28 +149,5 @@ extension PeopleViewController {
 extension PeopleViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         reloadData(with: searchText)
-    }
-}
-
-// MARK: - SwiftUI Canvas
-import SwiftUI
-
-struct PeopleViewControllerProvider: PreviewProvider {
-    
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let viewController = MainTabBarController()
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<PeopleViewControllerProvider.ContainerView>) -> MainTabBarController {
-            return viewController
-        }
-        
-        func updateUIViewController(_ uiViewController: PeopleViewControllerProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<PeopleViewControllerProvider.ContainerView>) {
-            
-        }
     }
 }

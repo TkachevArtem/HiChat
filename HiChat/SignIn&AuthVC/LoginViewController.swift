@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
     let loginButton = UIButton(title: "Login", titleColor: .white, backgroundColor: .black)
     let signUpButton = UIButton(title: "Sign Up", titleColor: .red, backgroundColor: .white)
     
-    let emailTextField = OneLineTextField(font: .avenir20()) 
+    let emailTextField = OneLineTextField(font: .avenir20())
     let passwordTextField = OneLineTextField(font: .avenir20())
     
     weak var delegate: AuthNavigationDelegate?
@@ -37,12 +37,20 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func loginButtonTapped() {
-        print(#function)
         AuthService.shared.login(email: emailTextField.text!, password: passwordTextField.text!) { result in
             switch result {
             case .success(let user):
-                self.showAlert(with: "Successful", and: "You have entered the chat")
-                print(user.email)
+                self.showAlert(with: "Successful", and: "You have entered the chat") {
+                    FirestoreService.shared.getUserData(user: user) { result in
+                        switch result {
+                        case .success(let hUser):
+                            self.present(MainTabBarController(), animated: true)
+                        case .failure(let error):
+                            self.present(SetupProfileViewController(currentUser: user), animated: true)
+                            print("Ошибка getuserdata")
+                        }
+                    }
+                }
             case .failure(let error):
                 self.showAlert(with: "Error", and: error.localizedDescription)
             }
@@ -96,34 +104,6 @@ extension LoginViewController {
             bottomStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             bottomStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
-        
-       
-        
-    }
-}
-
-
-// MARK: - SwiftUI Canvas
-import SwiftUI
-import FirebaseAuth
-
-struct LoginViewControllerProvider: PreviewProvider {
-    
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let viewController = LoginViewController()
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<LoginViewControllerProvider.ContainerView>) -> LoginViewController {
-            return viewController
-        }
-        
-        func updateUIViewController(_ uiViewController: LoginViewControllerProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<LoginViewControllerProvider.ContainerView>) {
-            
-        }
     }
 }
 

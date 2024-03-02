@@ -46,8 +46,9 @@ class SetupProfileViewController: UIViewController {
         FirestoreService.shared.saveProfileWith(id: currentUser.uid, email: currentUser.email!, username: fullNameTextField.text, avatarImageString: "nil", description: aboutMeTextField.text, sex: sexSegmentedControl.titleForSegment(at: sexSegmentedControl.selectedSegmentIndex)) { result in
             switch result {
             case .success(let hUser):
-                self.showAlert(with: "Successful", and: "Have a nice chatting")
-                print(hUser)
+                self.showAlert(with: "Successful", and: "Data was saved", completion: {
+                    self.present(MainTabBarController(), animated: true, completion: nil)
+                })
             case .failure(let error):
                 self.showAlert(with: "Error", and: error.localizedDescription)
             }

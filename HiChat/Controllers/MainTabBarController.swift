@@ -22,8 +22,9 @@ class MainTabBarController: UITabBarController {
         else { return }
         
         viewControllers = [
-            generateNavigationController(rootViewController: peopleVC, title: "People", image: peopleImage),
-            generateNavigationController(rootViewController: listVC, title: "Chats", image: chatsImage)
+            generateNavigationController(rootViewController: listVC, title: "Chats", image: chatsImage),
+            generateNavigationController(rootViewController: peopleVC, title: "People", image: peopleImage)
+            
         ]
     }
     
