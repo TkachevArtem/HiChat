@@ -37,9 +37,11 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func loginButtonTapped() {
+        
         AuthService.shared.login(email: emailTextField.text!, password: passwordTextField.text!) { result in
             switch result {
             case .success(let user):
+                print("User: \(user.uid)")
                 self.showAlert(with: "Successful", and: "You have entered the chat") {
                     FirestoreService.shared.getUserData(user: user) { result in
                         switch result {

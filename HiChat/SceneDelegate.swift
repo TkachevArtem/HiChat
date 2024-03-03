@@ -22,10 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let user = Auth.auth().currentUser {
             FirestoreService.shared.getUserData(user: user) { result in
                 switch result {
-                case .success(let hUser):
+                case .success(_):
                     self.window?.rootViewController = MainTabBarController()
-                    print("Start error")
-                case .failure(let error):
+                case .failure(_):
                     self.window?.rootViewController = AuthViewController()
                 }
             }

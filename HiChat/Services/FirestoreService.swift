@@ -19,27 +19,10 @@ class FirestoreService {
         return db.collection("users")
     }
     
-//    func getUserData(user: User, completion: @escaping (Result<HUser, Error>) -> Void) {
-//        let docRef = usersRef.document(user.uid)
-//        docRef.getDocument { document, error in
-//            if let document = document, document.exists {
-//                guard let hUser = HUser(document: document) else {
-//                    completion(.failure(UserError.cannotUnwrapToHUser))
-//                    return
-//                }
-//                completion(.success(hUser))
-//                print("User: \(hUser)")
-//            } else {
-//                completion(.failure(UserError.cannotGetUserInfo))
-//                print("Xyi")
-//            }
-//        }
-//    }
-    
     func getUserData(user: User, completion: @escaping (Result<HUser, Error>) -> Void) {
         let docRef = usersRef.document(user.uid)
         docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
+            if let document = document {
                 guard let hUser = HUser(document: document) else {
                     completion(.failure(UserError.cannotUnwrapToHUser))
                     return
@@ -47,7 +30,6 @@ class FirestoreService {
                 completion(.success(hUser))
             } else {
                 completion(.failure(UserError.cannotGetUserInfo))
-                print("i tyt xyi")
             }
         }
     }
@@ -58,7 +40,8 @@ class FirestoreService {
             return
         }
         let hUser = HUser(userName: username!, email: email, userAvatarString: "not exist", description: description!, sex: sex!, id: id)
-        self.usersRef.addDocument(data: hUser.representation) { error in
+        //self.usersRef.addDocument(data: hUser.representation)
+        self.usersRef.document(hUser.id).setData(hUser.representation) { error in
             if let error = error {
                 completion(.failure(error))
             } else {
@@ -69,5 +52,16 @@ class FirestoreService {
     
     func saveDataTest() {
         usersRef.addDocument(data: ["Test" : "Test", "Num" : "Num", "Int" : 123])
+    }
+    
+    func getDataTest(user: User) async {
+        do {
+          let snapshot = try await db.collection("users").getDocuments()
+          for document in snapshot.documents {
+            print("\(document.documentID) => \(document.data())")
+          }
+        } catch {
+          print("Error getting documents: \(error)")
+        }
     }
 }
