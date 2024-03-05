@@ -50,6 +50,7 @@
 		AC6FDC1C2B5982C800DCC8DA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6FDC1B2B5982C800DCC8DA /* MainTabBarController.swift */; };
 		AC6FDC1E2B59835300DCC8DA /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6FDC1D2B59835300DCC8DA /* ListViewController.swift */; };
 		AC6FDC212B59844200DCC8DA /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6FDC202B59844200DCC8DA /* PeopleViewController.swift */; };
+		AC7639B32B97A93400DE6B32 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7639B22B97A93400DE6B32 /* StorageService.swift */; };
 		AC77DE842B617252003DC0B4 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = AC77DE822B617252003DC0B4 /* waitingChats.json */; };
 		AC77DE852B617252003DC0B4 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = AC77DE832B617252003DC0B4 /* activeChats.json */; };
 		AC77DE872B617273003DC0B4 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC77DE862B617273003DC0B4 /* Bundle-Decodable.swift */; };
@@ -67,6 +68,8 @@
 		AC9664172B4C715D00162585 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC9664152B4C715D00162585 /* LaunchScreen.storyboard */; };
 		AC98603D2B55934300E7CABD /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC98603C2B55934300E7CABD /* SetupProfileViewController.swift */; };
 		ACB2AE2A2B519B87006D3D93 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2AE292B519B87006D3D93 /* ButtonFormView.swift */; };
+		ACBEF08E2B96473D00338C5E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = ACBEF08D2B96473D00338C5E /* GoogleSignIn */; };
+		ACBEF0902B96473D00338C5E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ACBEF08F2B96473D00338C5E /* GoogleSignInSwift */; };
 		ACC97FA22B651E320068D370 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC97FA12B651E320068D370 /* ActiveChatCell.swift */; };
 		ACC97FA42B65502D0068D370 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC97FA32B65502D0068D370 /* GradientView.swift */; };
 		ACC97FA62B65589E0068D370 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC97FA52B65589E0068D370 /* WaitingChatCell.swift */; };
@@ -99,6 +102,7 @@
 		AC6FDC1B2B5982C800DCC8DA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		AC6FDC1D2B59835300DCC8DA /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		AC6FDC202B59844200DCC8DA /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		AC7639B22B97A93400DE6B32 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		AC77DE822B617252003DC0B4 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		AC77DE832B617252003DC0B4 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		AC77DE862B617273003DC0B4 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
@@ -149,11 +153,13 @@
 				AC67F1F82B698690001338E4 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				AC67F1E22B698690001338E4 /* FirebaseAnalyticsSwift in Frameworks */,
 				AC67F2062B698690001338E4 /* FirebaseMLModelDownloader in Frameworks */,
+				ACBEF08E2B96473D00338C5E /* GoogleSignIn in Frameworks */,
 				AC67F1E42B698690001338E4 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				AC67F1DE2B698690001338E4 /* FirebaseAnalytics in Frameworks */,
 				AC67F1FA2B698690001338E4 /* FirebaseFirestoreSwift in Frameworks */,
 				AC67F1E02B698690001338E4 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				AC67F1E62B698690001338E4 /* FirebaseAppCheck in Frameworks */,
+				ACBEF0902B96473D00338C5E /* GoogleSignInSwift in Frameworks */,
 				AC67F20A2B698690001338E4 /* FirebasePerformance in Frameworks */,
 				AC67F2002B698690001338E4 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				AC67F1FE2B698690001338E4 /* FirebaseFunctionsCombine-Community in Frameworks */,
@@ -188,6 +194,7 @@
 				ACC97FAF2B6698B00068D370 /* Models */,
 				AC1DFAF22B6C18B9009A2929 /* AuthService.swift */,
 				AC8DC6C82B9101CE007DD6BF /* FirestoreService.swift */,
+				AC7639B22B97A93400DE6B32 /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -387,6 +394,8 @@
 				AC67F20D2B698690001338E4 /* FirebaseRemoteConfigSwift */,
 				AC67F20F2B698690001338E4 /* FirebaseStorage */,
 				AC67F2112B698690001338E4 /* FirebaseStorageCombine-Community */,
+				ACBEF08D2B96473D00338C5E /* GoogleSignIn */,
+				ACBEF08F2B96473D00338C5E /* GoogleSignInSwift */,
 			);
 			productName = HiChat;
 			productReference = AC9664072B4C715B00162585 /* HiChat.app */;
@@ -418,6 +427,7 @@
 			mainGroup = AC9663FE2B4C715B00162585;
 			packageReferences = (
 				AC67F1DC2B698690001338E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				ACBEF08C2B96473D00338C5E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = AC9664082B4C715B00162585 /* Products */;
 			projectDirPath = "";
@@ -479,6 +489,7 @@
 				ACC97FAB2B65627E0068D370 /* SectionHeader.swift in Sources */,
 				ACC97FA42B65502D0068D370 /* GradientView.swift in Sources */,
 				AC6E98BA2B4DC32C007DE035 /* UIFont + Extension.swift in Sources */,
+				AC7639B32B97A93400DE6B32 /* StorageService.swift in Sources */,
 				AC96640F2B4C715B00162585 /* AuthViewController.swift in Sources */,
 				ACCB52472B8F97D900B6256C /* AuthError.swift in Sources */,
 				ACC97FA22B651E320068D370 /* ActiveChatCell.swift in Sources */,
@@ -740,6 +751,14 @@
 				minimumVersion = 10.20.0;
 			};
 		};
+		ACBEF08C2B96473D00338C5E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -877,6 +896,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AC67F1DC2B698690001338E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		ACBEF08D2B96473D00338C5E /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACBEF08C2B96473D00338C5E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		ACBEF08F2B96473D00338C5E /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACBEF08C2B96473D00338C5E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

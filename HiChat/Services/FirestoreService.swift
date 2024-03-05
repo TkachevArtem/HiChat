@@ -34,11 +34,17 @@ class FirestoreService {
         }
     }
     
-    func saveProfileWith(id: String, email: String, username: String?, avatarImageString: String?, description: String?, sex: String?, completion: @escaping (Result<HUser, Error>) -> Void) {
+    func saveProfileWith(id: String, email: String, username: String?, avatarImage: UIImage?, description: String?, sex: String?, completion: @escaping (Result<HUser, Error>) -> Void) {
         guard Validators.isFilled(username: username, description: description, sex: sex) else {
             completion(.failure(UserError.notFilled))
             return
         }
+        
+        guard avatarImage != UIImage(named: "avatar") else {
+            completion(.failure(UserError.photoNotExit))
+            return
+        }
+        
         let hUser = HUser(userName: username!, email: email, userAvatarString: "not exist", description: description!, sex: sex!, id: id)
         //self.usersRef.addDocument(data: hUser.representation)
         self.usersRef.document(hUser.id).setData(hUser.representation) { error in

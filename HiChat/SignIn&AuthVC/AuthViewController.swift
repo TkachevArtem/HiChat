@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class AuthViewController: UIViewController {
     
@@ -87,31 +88,6 @@ extension AuthViewController: AuthNavigationDelegate {
     
     func toSignUpVC() {
         present(signUpViewController, animated: true, completion: nil)
-    }
-    
-    
-}
-
-// MARK: - SwiftUI Canvas
-import SwiftUI
-
-struct AuthViewControllerProvider: PreviewProvider {
-    
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let viewController = AuthViewController()
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<AuthViewControllerProvider.ContainerView>) -> AuthViewController {
-            return viewController
-        }
-        
-        func updateUIViewController(_ uiViewController: AuthViewControllerProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<AuthViewControllerProvider.ContainerView>) {
-            
-        }
     }
 }
 
