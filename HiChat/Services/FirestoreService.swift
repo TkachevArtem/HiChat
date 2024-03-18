@@ -45,15 +45,31 @@ class FirestoreService {
             return
         }
         
-        let hUser = HUser(userName: username!, email: email, userAvatarString: "not exist", description: description!, sex: sex!, id: id)
-        //self.usersRef.addDocument(data: hUser.representation)
-        self.usersRef.document(hUser.id).setData(hUser.representation) { error in
-            if let error = error {
+        var hUser = HUser(userName: username!, email: email, userAvatarString: "not exist", description: description!, sex: sex!, id: id)
+        
+        StorageService.shared.upload(photo: avatarImage!) { result in
+            switch result {
+            case .success(let url):
+                hUser.userAvatarString = url.absoluteString
+                self.usersRef.document(hUser.id).setData(hUser.representation) { error in
+                    if let error = error {
+                        completion(.failure(error))
+                    } else {
+                        completion(.success(hUser))
+                    }
+                }
+            case .failure(let error):
                 completion(.failure(error))
-            } else {
-                completion(.success(hUser))
             }
         }
+        
+        //        self.usersRef.document(hUser.id).setData(hUser.representation) { error in
+        //            if let error = error {
+        //                completion(.failure(error))
+        //            } else {
+        //                completion(.success(hUser))
+        //            }
+        //        }
     }
     
     func saveDataTest() {
@@ -62,12 +78,12 @@ class FirestoreService {
     
     func getDataTest(user: User) async {
         do {
-          let snapshot = try await db.collection("users").getDocuments()
-          for document in snapshot.documents {
-            print("\(document.documentID) => \(document.data())")
-          }
+            let snapshot = try await db.collection("users").getDocuments()
+            for document in snapshot.documents {
+                print("\(document.documentID) => \(document.data())")
+            }
         } catch {
-          print("Error getting documents: \(error)")
+            print("Error getting documents: \(error)")
         }
     }
 }

@@ -42,6 +42,7 @@
 		AC67F2102B698690001338E4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AC67F20F2B698690001338E4 /* FirebaseStorage */; };
 		AC67F2122B698690001338E4 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AC67F2112B698690001338E4 /* FirebaseStorageCombine-Community */; };
 		AC683BDD2B5849820085B138 /* SegmentedControl + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC683BDC2B5849820085B138 /* SegmentedControl + Extension.swift */; };
+		AC6A98992BA87D13001A19DD /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A98982BA87D13001A19DD /* UIImage + Extension.swift */; };
 		AC6E98B82B4DBEE8007DE035 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E98B72B4DBEE8007DE035 /* UIButton + Extension.swift */; };
 		AC6E98BA2B4DC32C007DE035 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E98B92B4DC32C007DE035 /* UIFont + Extension.swift */; };
 		AC6E98BC2B4DC473007DE035 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E98BB2B4DC473007DE035 /* UIColor + Extension.swift */; };
@@ -94,6 +95,7 @@
 		AC2D67C22B51D775005997F2 /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		AC67F1DA2B697BF5001338E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC683BDC2B5849820085B138 /* SegmentedControl + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedControl + Extension.swift"; sourceTree = "<group>"; };
+		AC6A98982BA87D13001A19DD /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
 		AC6E98B72B4DBEE8007DE035 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
 		AC6E98B92B4DC32C007DE035 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		AC6E98BB2B4DC473007DE035 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				AC683BDC2B5849820085B138 /* SegmentedControl + Extension.swift */,
 				ACC97FB42B66B9600068D370 /* UIViewController + Extension.swift */,
 				AC78E7C22B681D1300A48FD1 /* UIView + Extension.swift */,
+				AC6A98982BA87D13001A19DD /* UIImage + Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				AC6E98C02B4DCBE9007DE035 /* UIImageView + Extension.swift in Sources */,
 				AC6E98BC2B4DC473007DE035 /* UIColor + Extension.swift in Sources */,
 				ACC97FA92B655A530068D370 /* SelfConfiguringCell.swift in Sources */,
+				AC6A98992BA87D13001A19DD /* UIImage + Extension.swift in Sources */,
 				ACC97FA62B65589E0068D370 /* WaitingChatCell.swift in Sources */,
 				AC96640D2B4C715B00162585 /* SceneDelegate.swift in Sources */,
 				AC6FDC1E2B59835300DCC8DA /* ListViewController.swift in Sources */,
