@@ -6,5 +6,6 @@ target 'HiChat' do
   use_frameworks!
 
   # Pods for HiChat
+pod 'SDWebImage', '~> 5.0' 
 
 end

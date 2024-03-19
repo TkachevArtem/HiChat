@@ -10,6 +10,7 @@
 		087B9BE860FE3C4522AAB72D /* Pods_HiChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF6C2707D919DDE94180D09 /* Pods_HiChat.framework */; };
 		AC1DFAF32B6C18B9009A2929 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1DFAF22B6C18B9009A2929 /* AuthService.swift */; };
 		AC2A80A12B56FF8E00F5C9D8 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A80A02B56FF8E00F5C9D8 /* AddPhotoView.swift */; };
+		AC2B56722BA9CE2A00A192CE /* ListenerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2B56712BA9CE2A00A192CE /* ListenerService.swift */; };
 		AC2D67BF2B51A699005997F2 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2D67BE2B51A699005997F2 /* UIStackView + Extension.swift */; };
 		AC2D67C12B51CFE5005997F2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2D67C02B51CFE5005997F2 /* SignUpViewController.swift */; };
 		AC2D67C32B51D775005997F2 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2D67C22B51D775005997F2 /* OneLineTextField.swift */; };
@@ -90,6 +91,7 @@
 		9A8E35976395BDF42574C3B3 /* Pods-HiChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiChat.release.xcconfig"; path = "Target Support Files/Pods-HiChat/Pods-HiChat.release.xcconfig"; sourceTree = "<group>"; };
 		AC1DFAF22B6C18B9009A2929 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		AC2A80A02B56FF8E00F5C9D8 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
+		AC2B56712BA9CE2A00A192CE /* ListenerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerService.swift; sourceTree = "<group>"; };
 		AC2D67BE2B51A699005997F2 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		AC2D67C02B51CFE5005997F2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AC2D67C22B51D775005997F2 /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				AC1DFAF22B6C18B9009A2929 /* AuthService.swift */,
 				AC8DC6C82B9101CE007DD6BF /* FirestoreService.swift */,
 				AC7639B22B97A93400DE6B32 /* StorageService.swift */,
+				AC2B56712BA9CE2A00A192CE /* ListenerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				AC9664032B4C715B00162585 /* Sources */,
 				AC9664042B4C715B00162585 /* Frameworks */,
 				AC9664052B4C715B00162585 /* Resources */,
+				D40455BFC5D6C1B34A29DFCF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -480,6 +484,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D40455BFC5D6C1B34A29DFCF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HiChat/Pods-HiChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HiChat/Pods-HiChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HiChat/Pods-HiChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -492,6 +513,7 @@
 				ACC97FAB2B65627E0068D370 /* SectionHeader.swift in Sources */,
 				ACC97FA42B65502D0068D370 /* GradientView.swift in Sources */,
 				AC6E98BA2B4DC32C007DE035 /* UIFont + Extension.swift in Sources */,
+				AC2B56722BA9CE2A00A192CE /* ListenerService.swift in Sources */,
 				AC7639B32B97A93400DE6B32 /* StorageService.swift in Sources */,
 				AC96640F2B4C715B00162585 /* AuthViewController.swift in Sources */,
 				ACCB52472B8F97D900B6256C /* AuthError.swift in Sources */,
@@ -582,7 +604,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -645,7 +667,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

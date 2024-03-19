@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
                             let mainTabBar = MainTabBarController(currentUser: hUser)
                             mainTabBar.modalPresentationStyle = .fullScreen
                             self.present(mainTabBar, animated: true)
-                        case .failure(let error):
+                        case .failure(_):
                             self.present(SetupProfileViewController(currentUser: user), animated: true)
                             print("Ошибка getuserdata")
                         }

@@ -7,11 +7,10 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class PeopleViewController: UIViewController {
-    
-    //let users = Bundle.main.decode([HUser].self, from: "users.json")
-    
+
     enum Section: Int, CaseIterable {
         case users
         
@@ -23,7 +22,8 @@ class PeopleViewController: UIViewController {
         }
     }
     
-    let users = [HUser]()
+    var users = [HUser]()
+    private var usersListener: ListenerRegistration?
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, HUser>!
     
@@ -33,6 +33,10 @@ class PeopleViewController: UIViewController {
         self.currentUser = currentUser
         super.init(nibName: nil, bundle: nil)
         title = currentUser.userName
+    }
+    
+    deinit {
+        usersListener?.remove()
     }
     
     required init?(coder: NSCoder) {
@@ -46,9 +50,18 @@ class PeopleViewController: UIViewController {
         setupCollectionView()
         setupSearchBar()
         createDataSource()
-        reloadData(with: nil)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logOut))
+        
+        usersListener = ListenerService.shared.usersObserve(users: users, completion: { result in
+            switch result {
+            case .success(let users):
+                self .users = users
+                self.reloadData(with: nil)
+            case .failure(let error):
+                self.showAlert(with: "Error!", and: error.localizedDescription)
+            }
+        })
     }
     
     @objc func logOut() {

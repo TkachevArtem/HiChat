@@ -42,6 +42,23 @@ struct HUser: Hashable, Decodable {
         self.userAvatarString = userAvatarString
     }
     
+    init?(document: QueryDocumentSnapshot) {
+        let data = document.data()
+        guard let userName = data["userName"] as? String,
+              let email = data["email"] as? String,
+              let id = data["id"] as? String,
+              let description = data["description"] as? String,
+              let sex = data["sex"] as? String,
+              let userAvatarString = data["userAvatarString"] as? String else { return nil}
+        
+        self.userName = userName
+        self.email = email
+        self.id = id
+        self.description = description
+        self.sex = sex
+        self.userAvatarString = userAvatarString
+    }
+    
     var representation: [String: Any] {
         var rep = ["id": id]
         rep ["userName"] = userName
